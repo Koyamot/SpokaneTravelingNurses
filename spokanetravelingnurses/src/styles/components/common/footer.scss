@@ -1,0 +1,25 @@
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    padding: .8rem 0 .8rem 0;
+  
+    nav {
+      .navLink {
+        font-size: 1.6rem;
+        font-weight:500;
+        padding: 4px 8px;
+        &.book {
+          color: $white;
+          background-color: $blue;
+          border-radius: 8px;
+          margin: 0 8px;
+        }
+        &.explore {
+          font-style: italic;
+          font-weight: 700;
+          color: $blue;
+        }
+      }
+    }
+  }

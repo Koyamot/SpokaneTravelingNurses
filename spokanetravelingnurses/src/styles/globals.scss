@@ -1,0 +1,39 @@
+// Set box-sizing globally
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+// Ensure the app containers fills the screen
+html,
+body,
+#root {
+  min-height: 100vh;
+  background: #deecff;
+}
+
+// Set the font-size so 1rem = 10px for easier styling
+html {
+  font-size: 10px;
+}
+
+p{
+  font-size: 1.4rem;
+}
+
+input,
+label {
+  display: block;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Asap", sans-serif;
+}
+
+//colors
+$blue: rgb(93, 93, 236);
+$black: rgba(0, 0, 0, 0.87);
+$white: #FFF;

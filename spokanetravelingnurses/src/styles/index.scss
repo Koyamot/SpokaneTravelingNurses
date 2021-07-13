@@ -1,0 +1,19 @@
+/** Meyer CSS Reset */
+@import "./reset.css";
+
+/** import general */
+@import "./globals.scss";
+
+/** import antD */
+@import '~antd/dist/antd.css';
+
+/** import google fonts **/
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@400;700&display=swap');
+
+/** import common */
+@import "./general.scss";
+@import './components/common/header.scss';
+@import './components/common/footer.scss';
+
+/** import Pages */
+@import './components/pages/landing.scss';
