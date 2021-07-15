@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
+import { Typography } from "antd";
+
+const { Title } = Typography;
 
 
 const Booking = () => {
@@ -23,7 +26,7 @@ const Booking = () => {
 
   return (
     <div style={{ background: "#FFF" }}>
-      <h1>Booking</h1>
+      <Title level={1}>Booking</Title>
       <form onSubmit={sendEmail}>
         <label>
           First Name:
