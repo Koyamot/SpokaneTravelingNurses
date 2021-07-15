@@ -8,21 +8,6 @@ import { DateRangePicker } from "react-date-range";
 import { addDays } from "date-fns";
 
 const Booking = () => {
-  const [state, setState] = useState([
-    {
-      startDate: new Date(),
-      endDate: addDays(new Date(), 0),
-      key: "selection",
-    },
-  ]);
-
-  console.log(state)
-
-  const onChange = (item) => {
-    console.log("ITEM: ", item);
-    setState([item.selection]);
-  };
-
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -44,16 +29,6 @@ const Booking = () => {
   return (
     <div style={{ background: "#FFF" }}>
       <h1>Booking</h1>
-      {/* <div className="calendarWrapper">
-        <DateRangePicker
-          onChange={onChange}
-          showSelectionPreview={true}
-          moveRangeOnFirstSelection={false}
-          months={2}
-          ranges={state}
-          direction="horizontal"
-        />
-      </div> */}
       <form onSubmit={sendEmail}>
         <label>
           First Name:
