@@ -18,8 +18,9 @@ html {
   font-size: 10px;
 }
 
-p{
+p, a {
   font-size: 1.4rem;
+  font-family: "Asap", "sans-serif";
 }
 
 input,
@@ -36,4 +37,4 @@ h3 {
 //colors
 $blue: rgb(93, 93, 236);
 $black: rgba(0, 0, 0, 0.87);
-$white: #FFF;
+$white: #fff;
