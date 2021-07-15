@@ -19,7 +19,7 @@ const menu = (
     </Menu>
 );
 
-const Footer = (): React.ReactElement => {
+const Footer = () => {
 
     return (
         <footer>
