@@ -16,11 +16,17 @@ body,
 // Set the font-size so 1rem = 10px for easier styling
 html {
   font-size: 10px;
-  font-family: "Asap", sans-serif;
 }
 
-p, a, input, label {
-  font-size: 1.4rem;
+p,
+a,
+input,
+label,
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Asap", sans-serif;
 }
 
 input,
@@ -28,8 +34,8 @@ label {
   display: block;
 }
 
-h1, h2, h3, h4 {
-  font-family: "Asap", sans-serif;
+input {
+  margin-bottom: 1.6rem;
 }
 
 //colors
