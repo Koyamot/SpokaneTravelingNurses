@@ -36,37 +36,57 @@ const Booking = () => {
         padding: "2.4rem 8rem 2.4rem 8rem",
       }}
     >
-      <Title level={1}>Booking</Title>
-      <form onSubmit={sendEmail}>
-        <label>
-          First Name:
-          <input type="text" placeholder="First Name" name="firstName" />
-        </label>
-        <label>
-          Last Name:
-          <input type="text" placeholder="Last Name" name="lastName" />
-        </label>
-        <label>
-          Email Address:
-          <input type="email" placeholder="E-mail address" name="email" />
-        </label>
-        <label>
-          Phone Number:
-          <input type="tel" placeholder="" name="ph_number" />
-        </label>
-        <p>Dates interested in:</p>
-        <div>
-          <input type="date" name="startDate" /> -{" "}
-          <input type="date" name="endDate" />
+      <form className="flex-column align-center" onSubmit={sendEmail}>
+        <Title level={1}>Book Your Stay</Title>
+        <div className="name-box flex-row">
+          <label>
+            First Name:
+            <input
+              className="margin-right"
+              type="text"
+              placeholder="First Name"
+              name="firstName"
+            />
+          </label>
+          <label>
+            Last Name:
+            <input type="text" placeholder="Last Name" name="lastName" />
+          </label>
+        </div>
+        <div className="flex-row">
+          <label>
+            Email Address:
+            <input
+              className="margin-right"
+              type="email"
+              placeholder="E-mail address"
+              name="email"
+            />
+          </label>
+          <label>
+            Phone Number:
+            <input type="tel" placeholder="" name="ph_number" />
+          </label>
+        </div>
+        <div className="booking-dates flex" style={{ display: "flex" }}>
+          <label>
+            {" "}
+            Start Date:
+            <input className="margin-right" type="date" name="startDate" />
+          </label>{" "}
+          <label>
+            {" "}
+            End Date
+            <input type="date" name="endDate" />
+          </label>
         </div>
         <label>
           {" "}
-          Send a message(Any information the property manager may need to know,
-          accomodations, pets, car, etc):
-          <br></br>
+          Send the property manager a message:
+          <br />
           <textarea type="text" name="message"></textarea>
         </label>
-        <button type="submit">Send</button>
+        <button className="send-button" type="submit">Send</button>
       </form>
     </div>
   );

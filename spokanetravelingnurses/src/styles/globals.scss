@@ -43,6 +43,21 @@ label {
 
 input {
   margin-bottom: 1.6rem;
+  height: 4rem;
+  width: 24rem;
+}
+
+input, textarea {
+  border: 1px solid lightslategray;
+  border-radius: .4rem;
+  padding: 0 .8rem;
+
+}
+
+textarea {
+  width: 50rem;
+  height: 20rem;
+  margin-bottom: 1.6rem;
 }
 
 //colors

@@ -1,7 +1,14 @@
-.calendarWrapper {
-  display: flex;
-  justify-content: center;
-  .rdrDefinedRangesWrapper {
-    display: none;
-  }
+form {
+  border: 1px solid lightslategrey;
+  padding: 2rem 4rem;
+  border-radius: .4rem;
+}
+
+.send-button {
+  width: 50rem;
+  height: 4rem;
+  color: $white;
+  background-color: $blue;
+  border-radius: .4rem;
+  border: none;
 }
