@@ -2,9 +2,15 @@ import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import { Typography } from "antd";
 
-const { Title } = Typography;
+const { Title, Paragraph } = Typography;
 
 const Booking = () => {
+
+  const [startDate, setStartDate] = useState();
+  const [endDate, setEndDate] = useState(startDate);
+
+  console.log(startDate, endDate)
+
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -27,6 +33,15 @@ const Booking = () => {
     e.target.reset();
   };
 
+  const changeStartDate = e => {
+    setStartDate(e.target.value)
+    setEndDate(startDate)
+  }
+
+  const changeEndDate = e => {
+    setEndDate(e.target.value)
+  }
+
   return (
     <div
       className="booking-container"
@@ -37,7 +52,10 @@ const Booking = () => {
       }}
     >
       <form className="flex-column align-center" onSubmit={sendEmail}>
-        <Title level={1}>Book Your Stay</Title>
+        <Title level={2}>Submit Your Request</Title>
+        <Paragraph>
+          We are excited to have you stay with us! Please fill out the form below, and we'll get back to you as soon as possible. If you have any accomodations, pets, questions, please add them to the message section.
+        </Paragraph>
         <div className="name-box flex-row">
           <label>
             First Name:
@@ -65,19 +83,19 @@ const Booking = () => {
           </label>
           <label>
             Phone Number:
-            <input type="tel" placeholder="" name="ph_number" />
+            <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="XXX-XXX-XXX" name="ph_number"  required/>
           </label>
         </div>
         <div className="booking-dates flex" style={{ display: "flex" }}>
           <label>
             {" "}
             Start Date:
-            <input className="margin-right" type="date" name="startDate" />
+            <input className="margin-right" type="date" name="startDate" onChange={changeStartDate}/>
           </label>{" "}
           <label>
             {" "}
             End Date
-            <input type="date" name="endDate" />
+            <input type="date" name="endDate" onChange={changeEndDate} value={startDate || ''}/>
           </label>
         </div>
         <label>
@@ -86,7 +104,9 @@ const Booking = () => {
           <br />
           <textarea type="text" name="message"></textarea>
         </label>
-        <button className="send-button" type="submit">Send</button>
+        <button className="send-button" type="submit">
+          Send
+        </button>
       </form>
     </div>
   );
