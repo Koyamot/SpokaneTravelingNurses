@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom'
 import { Header, Footer } from './components/common';
 
 import { Amenities, Landing, Booking } from './components/pages'
+import { LogIn } from './components/pages/LogIn';
 
 
 function App() {

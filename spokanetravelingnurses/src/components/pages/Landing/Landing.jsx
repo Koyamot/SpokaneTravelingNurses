@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Typography, Image } from 'antd';
 import img from '../../../assets/Front.jpg';

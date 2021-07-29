@@ -7,7 +7,7 @@ const { Title, Paragraph } = Typography;
 const Booking = () => {
 
   const [startDate, setStartDate] = useState();
-  const [endDate, setEndDate] = useState(startDate);
+  const [endDate, setEndDate] = useState('');
 
   console.log(startDate, endDate)
 
@@ -95,9 +95,10 @@ const Booking = () => {
           <label>
             {" "}
             End Date
-            <input type="date" name="endDate" onChange={changeEndDate} value={startDate || ''}/>
+            <input type="date" name="endDate" onChange={changeEndDate} value={endDate || startDate}/>
           </label>
         </div>
+        <p className="grey-italicized">*Please be aware tht all dates are tentative. We thank you for your flexibility.</p>
         <label>
           {" "}
           Send the property manager a message:
