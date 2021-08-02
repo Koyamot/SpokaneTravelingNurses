@@ -13,7 +13,7 @@ const { Title } = Typography;
 const menu = (
     <Menu>
         <Menu.Item>
-            <Link className="navLink" to='/property'>Tour</Link>
+            <Link className="navLink" to='/tour'>Tour</Link>
         </Menu.Item>
         <Menu.Item>
             <Link className="navLink" to='/rooms'>Rooms</Link>
@@ -24,7 +24,7 @@ const menu = (
     </Menu>
 );
 
-const Header = () => {
+const VisitorHeader = () => {
 
     return (
         <>
@@ -50,7 +50,7 @@ const Header = () => {
                             Property <DownOutlined />
                         </Link>
                     </Dropdown>
-                    <Link className="navLink" to='/tenants'>Tenant Info</Link>
+                    <Link className="navLink" to='/tenantinfo'>Tenant Info</Link>
                     <Link className="navLink book" to='/booking'>Book Now</Link>
                     <Link className="navLink" to='/contact'>Contact Us</Link>
                     <Link className="navLink explore" to='/explore'>Explore Spokane!</Link>
@@ -60,4 +60,4 @@ const Header = () => {
     )
 }
 
-export default Header;
+export default VisitorHeader;

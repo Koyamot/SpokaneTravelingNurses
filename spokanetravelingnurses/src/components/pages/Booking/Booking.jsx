@@ -5,11 +5,10 @@ import { Typography } from "antd";
 const { Title, Paragraph } = Typography;
 
 const Booking = () => {
-
   const [startDate, setStartDate] = useState();
-  const [endDate, setEndDate] = useState('');
+  const [endDate, setEndDate] = useState("");
 
-  console.log(startDate, endDate)
+  console.log(startDate, endDate);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -33,28 +32,24 @@ const Booking = () => {
     e.target.reset();
   };
 
-  const changeStartDate = e => {
-    setStartDate(e.target.value)
-    setEndDate(startDate)
-  }
+  const changeStartDate = (e) => {
+    setStartDate(e.target.value);
+    setEndDate(startDate);
+  };
 
-  const changeEndDate = e => {
-    setEndDate(e.target.value)
-  }
+  const changeEndDate = (e) => {
+    setEndDate(e.target.value);
+  };
 
   return (
-    <div
-      className="booking-container"
-      style={{
-        backgroundColor: "white",
-        minHeight: "100vh",
-        padding: "2.4rem 8rem 2.4rem 8rem",
-      }}
-    >
+    <div className="container">
       <form className="flex-column align-center" onSubmit={sendEmail}>
         <Title level={2}>Submit Your Request</Title>
         <Paragraph>
-          We are excited to have you stay with us! Please fill out the form below, and we'll get back to you as soon as possible. If you have any accomodations, pets, questions, please add them to the message section.
+          We are excited to have you stay with us! Please fill out the form
+          below, and we'll get back to you as soon as possible. If you have any
+          accomodations, pets, questions, please add them to the message
+          section.
         </Paragraph>
         <div className="name-box flex-row">
           <label>
@@ -83,22 +78,41 @@ const Booking = () => {
           </label>
           <label>
             Phone Number:
-            <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="XXX-XXX-XXX" name="ph_number"  required/>
+            <input
+              type="tel"
+              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+              placeholder="XXX-XXX-XXX"
+              name="ph_number"
+              required
+            />
           </label>
         </div>
         <div className="booking-dates flex" style={{ display: "flex" }}>
           <label>
             {" "}
             Start Date:
-            <input className="margin-right" type="date" name="startDate" onChange={changeStartDate}/>
+            <input
+              className="margin-right"
+              type="date"
+              name="startDate"
+              onChange={changeStartDate}
+            />
           </label>{" "}
           <label>
             {" "}
             End Date
-            <input type="date" name="endDate" onChange={changeEndDate} value={endDate || startDate}/>
+            <input
+              type="date"
+              name="endDate"
+              onChange={changeEndDate}
+              value={endDate || startDate}
+            />
           </label>
         </div>
-        <p className="grey-italicized">*Please be aware tht all dates are tentative. We thank you for your flexibility.</p>
+        <p className="grey-italicized">
+          *Please be aware tht all dates are tentative. We thank you for your
+          flexibility.
+        </p>
         <label>
           {" "}
           Send the property manager a message:
