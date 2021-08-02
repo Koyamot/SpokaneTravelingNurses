@@ -1,3 +1,9 @@
+.container {
+    background-color: white;
+    min-height: 100vh;
+    padding: 2.4rem 8rem 2.4rem 8rem;
+}
+
 .margin-left {
     margin-left: 2.4rem;
 }
@@ -37,8 +43,3 @@
     font-style: italic;
 }
 
-.container {
-    background-color: white;
-    min-height: 100vh;
-    padding: 2.4rem 8rem 2.4rem 8rem;
-}

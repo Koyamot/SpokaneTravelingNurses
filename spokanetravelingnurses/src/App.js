@@ -1,13 +1,16 @@
 import React, { Fragment } from "react";
 import { Route, Switch } from "react-router-dom";
-import { AdminHeader, Footer, VisitorHeader } from "./components/common";
+import { AdminHeader, Footer, VisitorHeader, SingleRoom } from "./components/common";
 
 import RenderHeader from "./components/common"
 
-import { Amenities, Landing, Booking, TenantInfo, Rooms, Tour, Contact } from "./components/pages";
+import { Amenities, Landing, Booking, TenantInfo, RoomList, Tour, Contact } from "./components/pages";
 import { LogIn } from "./components/pages/LogIn";
 
+import { rooms } from "./components/pages/Rooms/roomData"
+
 function App() {
+  console.log(rooms)
   return (
     <div
       className="App"
@@ -20,7 +23,10 @@ function App() {
         <Route path="/" component={Landing} exact />
         <Route path="/amenities" component={Amenities} exact />
         <Route path="/tenantinfo" component={TenantInfo} />
-        <Route path="/rooms" component={Rooms} />
+        <Route path="/rooms" render={() => <RoomList rooms={rooms}/>} />
+        <Route path="/room/:id">
+          <SingleRoom />
+        </Route>
         <Route path="/tour" component={Tour} />
         <Route path="/contact" component={Contact} />
         <Route path="/booking" component={Booking} exact />
