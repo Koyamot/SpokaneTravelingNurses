@@ -48,8 +48,8 @@ const Footer = () => {
         </Link>
       </nav>
       <div className="login-box">
-        <Link className="navLink" to="/login">
-          Log In
+        <Link className="navLink" to="/admin">
+          Admin
         </Link>
       </div>
     </footer>

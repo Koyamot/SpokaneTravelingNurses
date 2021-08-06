@@ -8,8 +8,6 @@ const Booking = () => {
   const [startDate, setStartDate] = useState();
   const [endDate, setEndDate] = useState("");
 
-  console.log(startDate, endDate);
-
   const sendEmail = (e) => {
     e.preventDefault();
 

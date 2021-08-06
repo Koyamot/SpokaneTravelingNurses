@@ -37,7 +37,7 @@ label {
 }
 
 a, a:hover, p, p:hover {
-  color: rgba(0, 0, 0, 0.87);
+  color: rgba(0, 0, 0, 0.87);;
   text-decoration: none;
 }
 
@@ -67,7 +67,7 @@ textarea {
 }
 
 //colors
-$blue: rgb(30, 30, 31);
+$blue: #5d5dec;
 $black: rgba(0, 0, 0, 0.87);
 $white: #fff;
 $light-grey: lightslategrey;

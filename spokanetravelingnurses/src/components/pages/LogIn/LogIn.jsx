@@ -1,15 +1,35 @@
 import React, { useState } from "react";
+import axios from "axios";
+import { useHistory } from "react-router-dom";
+
 import { Form, Input, Button, Checkbox, Typography } from "antd";
 
 const { Title, Paragraph } = Typography;
 
 export const LogIn = () => {
-  const onFinish = (values) => {
-    console.log("Success:", values);
-  };
+  const history = useHistory();
+  
+  const [identifier, setIdentifier] = useState();
+  const [password, setPassword] = useState();
 
-  const onFinishFailed = (errorInfo) => {
-    console.log("Failed:", errorInfo);
+  // Request API.
+  const onFinish = (e) => {
+    const data = {
+      "identifier": identifier,
+      "password": password,
+    }
+    axios
+      .post("http://localhost:1337/auth/local", data)
+      .then((res) => {
+        // Handle success.
+        window.localStorage.setItem("user", res.data.user);
+        window.localStorage.setItem("token", res.data.jwt);
+        history.push("/admin");
+      })
+      .catch((error) => {
+        // Handle error.
+        console.log("An error occurred:", error.message);
+      });
   };
 
   return (
@@ -26,11 +46,13 @@ export const LogIn = () => {
           remember: true,
         }}
         onFinish={onFinish}
-        onFinishFailed={onFinishFailed}
+        // onFinishFailed={onFinishFailed}
       >
         <Form.Item
           label="Username"
-          name="username"
+          name="identifier"
+          placeholder="Username..."
+          onChange={e => setIdentifier(e.target.value)}
           rules={[
             {
               required: true,
@@ -44,6 +66,8 @@ export const LogIn = () => {
         <Form.Item
           label="Password"
           name="password"
+          placeholder="Password..."
+          onChange={e => setPassword(e.target.value)}
           rules={[
             {
               required: true,

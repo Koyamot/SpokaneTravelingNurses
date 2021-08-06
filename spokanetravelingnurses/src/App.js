@@ -1,16 +1,16 @@
 import React, { Fragment } from "react";
 import { Route, Switch } from "react-router-dom";
+import SecureRoute from "./components/api/SecureRoute";
 import { AdminHeader, Footer, VisitorHeader, SingleRoom } from "./components/common";
 
 import RenderHeader from "./components/common"
 
-import { Amenities, Landing, Booking, TenantInfo, RoomList, Tour, Contact } from "./components/pages";
+import { Amenities, Landing, Booking, TenantInfo, RoomList, Tour, Contact, Admin } from "./components/pages";
 import { LogIn } from "./components/pages/LogIn";
 
 import { rooms } from "./components/pages/Rooms/roomData"
 
 function App() {
-  console.log(rooms)
   return (
     <div
       className="App"
@@ -18,6 +18,7 @@ function App() {
     >
       <Switch>
         <Route path="/login" component={LogIn} exact />
+        <SecureRoute path="/admin" component={Admin} />
       <Fragment>
         <VisitorHeader />
         <Route path="/" component={Landing} exact />
