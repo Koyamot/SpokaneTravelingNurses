@@ -3,16 +3,41 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  .hide {
+    order: 5;
+  }
   .room-card {
     display: inline-block;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    height: 25rem;
-    margin: 2rem;
-    .room-info {
-      padding: 2rem;
-    }
+    margin: 1.6rem;
+    padding: 1.6rem;
     .room-pic {
       width: 25rem;
     }
   }
+}
+
+.book-button {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: 24rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  padding: 4px 8px;
+  color: $white;
+  background-color: $blue;
+  border-radius: 8px;
+  &:hover {
+    color: $white;
+  }
+}
+
+.copy-button {
+  height: 4rem;
+  margin: 0 1.6rem;
+}
+
+.copy-link-box {
+  margin-bottom: 1.6rem;
 }

@@ -36,9 +36,13 @@ label {
   font-size: 1.4rem;
 }
 
-a, a:hover, p, p:hover {
-  color: rgba(0, 0, 0, 0.87);;
+a, p {
+  color: rgba(0, 0, 0, 0.87);
   text-decoration: none;
+}
+
+a:hover, p:hover {
+  color: inherit;
 }
 
 input,

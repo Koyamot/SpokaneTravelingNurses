@@ -41,7 +41,7 @@ const Footer = () => {
           Tenant Info
         </Link>
         <Link className="navLink" to="/contact">
-          Contact Us
+          About Us
         </Link>
         <Link className="navLink explore" to="/explore">
           Explore Spokane!
