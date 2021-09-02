@@ -21,7 +21,7 @@ import {
 } from "./components/pages";
 import { LogIn } from "./components/pages/LogIn";
 
-import { rooms } from "./components/pages/Rooms/roomData";
+import { room, rooms } from "./components/pages/Rooms/roomData";
 
 function App() {
   
@@ -48,9 +48,9 @@ function App() {
           <Route path="/" component={Landing} exact />
           <Route path="/amenities" component={Amenities} exact />
           <Route path="/tenantinfo" component={TenantInfo} />
-          <Route path="/rooms" render={() => <RoomList rooms={rooms} />} />
+          <Route path="/rooms" render={() => <RoomList rooms={rooms[1].roomInfo} />} />
           <Route path="/room/:id">
-            <SingleRoom />
+            <SingleRoom amenities={rooms[0].room}/>
           </Route>
           <Route path="/tour" component={Tour} />
           <Route path="/contact" component={Contact} />

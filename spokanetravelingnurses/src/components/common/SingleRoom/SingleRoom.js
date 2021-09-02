@@ -29,6 +29,7 @@ const GET_SINGLE_ROOM = gql`
     publicRoom(id: $id) {
       id
       room_name
+      description
       link {
         link
       }
@@ -40,7 +41,7 @@ const GET_SINGLE_ROOM = gql`
   }
 `;
 
-function SingleRoom() {
+function SingleRoom({ amenities }) {
   const [copied, setCopied] = useState(false);
   const textAreaRef = useRef(null);
   const token = localStorage.getItem("token");
@@ -87,12 +88,19 @@ function SingleRoom() {
   return (
     <div className="container">
       <Title>{room.room_name}</Title>
-      <Carousel style={{ background: "black" }}>
+      <Carousel style={{ background: "black", marginBottom: "3.2rem"}}>
         {pics.map((link, key) => (
           <img src={link} key={key} />
         ))}
       </Carousel>
-      <Paragraph>These are the room details.</Paragraph>
+      <Title level={4}>About this room:</Title>
+      <Paragraph>{room.description}</Paragraph>
+      <Title level={4}>Each room includes:</Title>
+      <div className="flex-column amenities-list">
+      {amenities.map((item)=>(
+        <Paragraph>{item}</Paragraph>
+      ))}
+      </div>
       <div className="flex-column align-center copy-link-box">
         <Title level={4}>Share this room:</Title>
         <div className="flex-row align-baseline">

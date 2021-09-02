@@ -22,6 +22,7 @@ const PUBLIC_ROOMS = gql`
 `;
 
 const token = localStorage.getItem("token");
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 const AdminRooms = () => {
   const { loading, error, data } = useQuery(PUBLIC_ROOMS, {
@@ -38,7 +39,6 @@ const AdminRooms = () => {
   return (
     <div className="container room-list">
       {data.publicRooms.map((room) => {
-        console.log("This is each room :", room);
         return !room.room.Occupied ? (
           <Link to={`/admin/room/${room.id}`} key={room.id}>
             <RoomsList room={room} />
@@ -55,9 +55,7 @@ const AdminRooms = () => {
 
 const RoomsList = ({ room }) => {
   const picture =
-    "http://localhost:1337" + `${room.Pictures[0].formats.small.url}`;
-
-  console.log("Room props: ", room.id);
+    `${backendUrl}${room.Pictures[0].formats.small.url}`;
   const status = room.room.Occupied;
 
   let title, availability;
@@ -77,7 +75,7 @@ const RoomsList = ({ room }) => {
     availability = <p>Available on {room.room.endDate}</p>;
   }
   return (
-    <div key={room.id} className="room-card" key={room.id}>
+    <div className="room-card" key={room.id}>
       {title}
       <img src={picture} className="room-pic" alt="rooms" />
       <div className="room-info">

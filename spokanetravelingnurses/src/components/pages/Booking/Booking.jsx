@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import { Typography } from "antd";
+import { useHistory } from "react-router-dom";
 
 const { Title, Paragraph } = Typography;
 
 const Booking = () => {
+  const history = useHistory();
   const [startDate, setStartDate] = useState();
   const [endDate, setEndDate] = useState("");
 
@@ -28,6 +30,7 @@ const Booking = () => {
       );
 
     e.target.reset();
+    history.push('/tenantinfo')
   };
 
   const changeStartDate = (e) => {
