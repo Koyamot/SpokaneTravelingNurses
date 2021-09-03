@@ -23,10 +23,12 @@ import { LogIn } from "./components/pages/LogIn";
 
 import { rooms } from "./components/pages/Rooms/roomData";
 
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
 function App() {
   
   const link = createHttpLink({
-    uri: "http://localhost:1337/graphql",
+    uri: `${backendUrl}/graphql`,
     credentials: 'same-origin'
   })
   const client = new ApolloClient({
