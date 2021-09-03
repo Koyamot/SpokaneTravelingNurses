@@ -21,7 +21,7 @@ import {
 } from "./components/pages";
 import { LogIn } from "./components/pages/LogIn";
 
-import { room, rooms } from "./components/pages/Rooms/roomData";
+import { rooms } from "./components/pages/Rooms/roomData";
 
 function App() {
   

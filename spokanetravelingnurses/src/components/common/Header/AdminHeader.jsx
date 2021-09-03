@@ -12,17 +12,17 @@ const AdminHeader = () => {
     <>
       <header>
         <nav>
-          <Link className="navLink" to="/" onClick={onClick}>
-            STN
-          </Link>
           <Link className="navLink" to="/admin">
             Home
           </Link>
           <Link className="navLink" to="/admin/rooms">
             Rooms
           </Link>
-          <Link className="navLink" to="/admin/contact">
-            About Us
+          <Link className="navLink" to="/admin/inquire">
+            Inquire
+          </Link>
+          <Link className="navLink" to="/" onClick={onClick}>
+            Back to STN
           </Link>
         </nav>
       </header>
