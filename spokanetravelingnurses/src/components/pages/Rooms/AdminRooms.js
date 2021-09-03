@@ -22,6 +22,7 @@ const PUBLIC_ROOMS = gql`
 `;
 
 const token = localStorage.getItem("token");
+
 const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 const AdminRooms = () => {

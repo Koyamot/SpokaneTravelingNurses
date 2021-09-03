@@ -41,10 +41,11 @@ const GET_SINGLE_ROOM = gql`
   }
 `;
 
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
 function SingleRoom({ amenities }) {
   const [copied, setCopied] = useState(false);
   const textAreaRef = useRef(null);
-  const token = localStorage.getItem("token");
   const { id } = useParams();
   const location = useLocation();
   const { loading, error, data } = useQuery(GET_SINGLE_ROOM, {
@@ -72,7 +73,7 @@ function SingleRoom({ amenities }) {
   if (error) return <p>DOH! :(</p>;
   const room = data.publicRoom;
   const pics = room.Pictures.map((pics) => {
-    const link = "http://localhost:1337" + pics.formats.medium.url;
+    const link = `${backendUrl}${pics.formats.medium.url}`;
     return link;
   });
 
