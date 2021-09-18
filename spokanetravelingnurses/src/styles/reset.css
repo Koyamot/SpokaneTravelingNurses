@@ -93,7 +93,6 @@ video {
 }
 /* removes text decoration from link */
 a:-webkit-any-link {
-    color: #000;
     cursor: pointer;
     text-decoration: none;
 }

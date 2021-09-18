@@ -1,0 +1,42 @@
+const list = {
+  property: [
+    "• Short-term and long-term rental contract",
+    "• Centrally Located to Spokane Area",
+    "• Minutes to Spokane and Kootenai Hospitals",
+    "• Minutes to Downtown Spokane",
+    "• Close to Major Shopping: Walmart, Fred Meyers, Costco, Trader Joes",
+    "• Close to Bus Routes, Gyms, and Restaurants",
+    "• Corporate and Individual Booking",
+  ],
+  room: [
+    "Refrigerator with freezer",
+    "Linens",
+    "Pillows, Blankets",
+    "Dresser",
+    "32” TV with Dish TV",
+    "Vanity mirror",
+    "Desk",
+    "Tinted windows",
+    "Blackout curtains",
+  ],
+  general: [
+    "• Air Conditioning ",
+    "• Weekly General Area - Limited Housekeeping ",
+    "• Non-Smoking ",
+    "• Designated Smoking Area",
+  ],
+  amenities: [
+    "• Treadmill and Elliptical Machine with TV ",
+    "• Formal Living Room with Fireplace and 75” Big Screen TV ",
+    "• Formal Dining Area ",
+    "• Kitchen with Cooking Utensils and Supplies, Freezer Onsite",
+    "• Ninja Foodi 5-in-1 Indoor Electric Countertop Grill ",
+    "• Starbuck’s Espresso Machine ",
+    "• LG Stack-set Washer and Dryer",
+    "• Off-Street Parking with lights",
+    "• Pond and Patio with BBQ",
+    "• Pets upon approval, Dog Run Area",
+    "• Experienced Property Owners",
+  ],
+};
+export default list;

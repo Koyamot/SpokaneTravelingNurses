@@ -1,2 +1,53 @@
+.container {
+    background-color: white;
+    min-height: 100vh;
+    padding: 2.4rem 8rem 2.4rem 8rem;
+}
 
+.margin-left {
+    margin-left: 2.4rem;
+}
+
+.margin-right {
+    margin-right: 2.4rem;
+}
+
+.margin-center {
+    margin: 0 auto;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.justify-space {
+    justify-content: space-between;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.align-baseline {
+    align-items: baseline;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.grey-italicized {
+    color: $light-grey;
+    font-style: italic;
+}
 

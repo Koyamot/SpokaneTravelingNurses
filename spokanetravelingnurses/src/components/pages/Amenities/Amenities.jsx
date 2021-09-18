@@ -1,33 +1,30 @@
-import React from 'react';
-import { Header, Footer } from '../../common';
-import { Typography, Image } from 'antd';
-import Spokane from '../../../assets/clock-tower-and-pavilion.jpg'
-import img from '../../../assets/Front.jpg'
-
-const { Title, Paragraph } = Typography;
+import Title from "antd/lib/typography/Title";
+import React from "react";
+import list from "./list";
 
 const Amenities = () => {
-    return (
-        <div className="Amenities">
-            <div
-                className="bg-container"
-                style={{
-                    backgroundImage: `url("${Spokane}")`,
-                    backgroundPosition: '2% 40%',
-                    height: '20rem',
-                    width: '100%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                }}
-            >
-                <Title>Welcome, Traveling Nurses!</Title>
-            </div>
-            <Header />
-            <h1>These are the amenities</h1>
+  return (
+    <div className="container">
+      <div className="flex-row justify-space">
+        <div className="flex-column">
+          <Title level={3}>Property Highlights:</Title>
+          {list.property.map((item) => (
+            <p key={item.id}>{item}</p>
+          ))}
         </div>
-    )
-}
-
+        <div className="flex-column">
+          <Title level={3}>General Housing Highlights:</Title>
+          {list.general.map((item) => (
+            <p ley={item.id}>{item}</p>
+          ))}
+        </div>
+      </div>
+      <Title level={3}>Housing Highlights:</Title>
+      {list.amenities.map((item) => (
+        <p ley={item.id}>{item}</p>
+      ))}
+    </div>
+  );
+};
 
 export default Amenities;
