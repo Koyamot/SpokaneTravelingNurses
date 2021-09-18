@@ -77,6 +77,8 @@ function SingleRoom({ amenities }) {
     return link;
   });
 
+  console.log(data)
+
   function copy(e) {
     textAreaRef.current.select();
     document.execCommand("copy");
@@ -86,9 +88,9 @@ function SingleRoom({ amenities }) {
     setCopied(true);
   }
   return (
-    <div className="container">
+    <div className="container single-room">
       <Title>{room.room_name}</Title>
-      <Carousel style={{ background: "black", marginBottom: "3.2rem"}}>
+      <Carousel style={{ background: "black", marginBottom: "3.2rem", maxHeight: "25rem"}}>
         {pics.map((link, key) => (
           <img src={link} key={key} />
         ))}
