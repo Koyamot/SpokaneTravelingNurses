@@ -6,6 +6,8 @@ import { Form, Input, Button, Checkbox, Typography } from "antd";
 
 const { Title, Paragraph } = Typography;
 
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
 export const LogIn = () => {
   const history = useHistory();
   
@@ -19,7 +21,7 @@ export const LogIn = () => {
       "password": password,
     }
     axios
-      .post("http://localhost:1337/auth/local", data)
+      .post(`${backendUrl}/auth/local`, data)
       .then((res) => {
         // Handle success.
         window.localStorage.setItem("user", res.data.user);

@@ -73,11 +73,11 @@ function SingleRoom({ amenities }) {
   if (error) return <p>DOH! :(</p>;
   const room = data.publicRoom;
   const pics = room.Pictures.map((pics) => {
-    const link = `${backendUrl}${pics.formats.medium.url}`;
+    const link = `${pics.formats.medium.url}`;
     return link;
   });
 
-  console.log(data)
+  console.log(pics)
 
   function copy(e) {
     textAreaRef.current.select();
@@ -90,7 +90,7 @@ function SingleRoom({ amenities }) {
   return (
     <div className="container single-room">
       <Title>{room.room_name}</Title>
-      <Carousel style={{ background: "black", marginBottom: "3.2rem", maxHeight: "25rem"}}>
+      <Carousel style={{ background: "black", marginBottom: "3.2rem"}}>
         {pics.map((link, key) => (
           <img src={link} key={key} />
         ))}
@@ -106,10 +106,10 @@ function SingleRoom({ amenities }) {
       <div className="flex-column align-center copy-link-box">
         <Title level={4}>Share this room:</Title>
         <div className="flex-row align-baseline">
-          <input value={room.link.link} ref={textAreaRef} readOnly />
+          {/* <input value={room.link.link} ref={textAreaRef} readOnly />
           <button className="copy-button" onClick={copy}>
             Copy Link
-          </button>
+          </button> */}
         </div>
         {!copied ? "" : "Link has been copied!"}
       </div>

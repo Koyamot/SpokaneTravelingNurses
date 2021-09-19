@@ -1,7 +1,8 @@
 .single-room {
     img {
         height: 30rem;
-        width: auto !important;
+        margin: 0 auto;
+        width: inherit !important;
     }
   .amenities-list {
     flex-wrap: wrap;
