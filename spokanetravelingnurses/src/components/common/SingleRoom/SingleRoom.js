@@ -45,6 +45,7 @@ const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 function SingleRoom({ amenities }) {
   const [copied, setCopied] = useState(false);
+  const [featured, setFeatured] = useState()
   const textAreaRef = useRef(null);
   const { id } = useParams();
   const location = useLocation();
@@ -54,30 +55,36 @@ function SingleRoom({ amenities }) {
     },
   });
 
+  console.log("These are amenities: ", amenities);
+
   let authButton;
-  if(location.pathname.includes('admin')) {
-      authButton = (
-        <Link className="book-button" to="/admin/booking">
+  if (location.pathname.includes("admin")) {
+    authButton = (
+      <Link className="book-button" to="/admin/booking">
         Inquire!
       </Link>
-      )
+    );
   } else {
-      authButton = (
-        <Link className="book-button" to="/booking">
+    authButton = (
+      <Link className="book-button" to="/booking">
         Book Now!
       </Link>
-      )
+    );
   }
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>DOH! :(</p>;
   const room = data.publicRoom;
   const pics = room.Pictures.map((pics) => {
-    const link = `${pics.formats.medium.url}`;
+    const link = `${pics.formats.thumbnail.url}`;
     return link;
   });
 
-  console.log(pics)
+  console.log(pics);
+
+  const onClick = (pic) => {
+    setFeatured(pic)
+  }
 
   function copy(e) {
     textAreaRef.current.select();
@@ -90,18 +97,20 @@ function SingleRoom({ amenities }) {
   return (
     <div className="container single-room">
       <Title>{room.room_name}</Title>
-      <Carousel style={{ background: "black", marginBottom: "3.2rem"}}>
-        {pics.map((link, key) => (
-          <img src={link} key={key} />
-        ))}
-      </Carousel>
-      <Title level={4}>About this room:</Title>
+      <div><img src={featured} /></div>
+      <div className="flex-row">
+      {pics.map((link, key) => (
+        <div onClick={(link) => onClick(link)}>
+        <img src={link} key={key} />
+        </div>
+      ))}
+      </div>
       <Paragraph>{room.description}</Paragraph>
       <Title level={4}>Each room includes:</Title>
       <div className="flex-column amenities-list">
-      {amenities.map((item)=>(
-        <Paragraph>{item}</Paragraph>
-      ))}
+        {amenities.map((item) => (
+          <Paragraph>{item}</Paragraph>
+        ))}
       </div>
       <div className="flex-column align-center copy-link-box">
         <Title level={4}>Share this room:</Title>

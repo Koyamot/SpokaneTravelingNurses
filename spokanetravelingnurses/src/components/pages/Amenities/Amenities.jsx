@@ -15,13 +15,13 @@ const Amenities = () => {
         <div className="flex-column">
           <Title level={3}>General Housing Highlights:</Title>
           {list.general.map((item) => (
-            <p ley={item.id}>{item}</p>
+            <p key={item.id}>{item}</p>
           ))}
         </div>
       </div>
       <Title level={3}>Housing Highlights:</Title>
       {list.amenities.map((item) => (
-        <p ley={item.id}>{item}</p>
+        <p key={item.id}>{item}</p>
       ))}
     </div>
   );
