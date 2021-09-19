@@ -45,6 +45,7 @@ const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 function SingleRoom({ amenities }) {
   const [copied, setCopied] = useState(false);
+  const [featured, setFeatured] = useState("https://stnbe.s3.us-west-1.amazonaws.com/medium_rooma_00_4319f0dc3e.jpg");
   const textAreaRef = useRef(null);
   const { id } = useParams();
   const location = useLocation();
@@ -54,30 +55,37 @@ function SingleRoom({ amenities }) {
     },
   });
 
+  console.log("These are amenities: ", amenities);
+
   let authButton;
-  if(location.pathname.includes('admin')) {
-      authButton = (
-        <Link className="book-button" to="/admin/booking">
+  if (location.pathname.includes("admin")) {
+    authButton = (
+      <Link className="book-button" to="/admin/booking">
         Inquire!
       </Link>
-      )
+    );
   } else {
-      authButton = (
-        <Link className="book-button" to="/booking">
+    authButton = (
+      <Link className="book-button" to="/booking">
         Book Now!
       </Link>
-      )
+    );
   }
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>DOH! :(</p>;
   const room = data.publicRoom;
   const pics = room.Pictures.map((pics) => {
-    const link = `${backendUrl}${pics.formats.medium.url}`;
+    const link = `${pics.formats.medium.url}`;
     return link;
   });
 
-  console.log(data)
+  console.log(pics);
+
+  const onClick = (e) => {
+    setFeatured(e.target.currentSrc);
+    console.log("This is the pic: ", featured);
+  };
 
   function copy(e) {
     textAreaRef.current.select();
@@ -90,26 +98,32 @@ function SingleRoom({ amenities }) {
   return (
     <div className="container single-room">
       <Title>{room.room_name}</Title>
-      <Carousel style={{ background: "black", marginBottom: "3.2rem", maxHeight: "25rem"}}>
+      <div className="flex-row">
+      <div className="flex-column justify-center pic-options">
         {pics.map((link, key) => (
-          <img src={link} key={key} />
+          <div className="tiny-pic" onClick={(e) => onClick(e)}>
+            <img src={link} key={key} />
+          </div>
         ))}
-      </Carousel>
-      <Title level={4}>About this room:</Title>
+      </div>
+      <div className="pic-container">
+        <img src={featured} alt="room" />
+      </div>
+      </div>
       <Paragraph>{room.description}</Paragraph>
       <Title level={4}>Each room includes:</Title>
       <div className="flex-column amenities-list">
-      {amenities.map((item)=>(
-        <Paragraph>{item}</Paragraph>
-      ))}
+        {amenities.map((item) => (
+          <Paragraph>{item}</Paragraph>
+        ))}
       </div>
       <div className="flex-column align-center copy-link-box">
         <Title level={4}>Share this room:</Title>
         <div className="flex-row align-baseline">
-          <input value={room.link.link} ref={textAreaRef} readOnly />
+          {/* <input value={room.link.link} ref={textAreaRef} readOnly />
           <button className="copy-button" onClick={copy}>
             Copy Link
-          </button>
+          </button> */}
         </div>
         {!copied ? "" : "Link has been copied!"}
       </div>

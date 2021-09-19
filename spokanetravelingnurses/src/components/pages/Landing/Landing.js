@@ -17,22 +17,30 @@ const Landing = () => {
           }}
         >
           <Title level={1}>Traveling Nurse Communal Living</Title>
+          <Paragraph>
+            Spokane Traveling Nurses is ran by a husband and wife with years of
+            property management experience. They take pride in their properties,
+            with more than 10 rental properties under their care. The couple has
+            decided to flip their home of 25 years into a welcoming space for
+            traveling nurses visiting Spokane, WA.
+          </Paragraph>
           <Image src={img} preview={false} />
           <Title level={4}>708 S. Thor St. Spokane, WA 99202</Title>
-          <Title level={3}>A home away from home</Title>
+          <Title level={3} style={{ fontStyle: "italic" }}>
+            <i>YOUR HOME AWAY FROM HOME</i>
+          </Title>
           <Paragraph>
-            This is a paragraph about this location. It is a big house and it
-            has a kitchen, 47 bedrooms, the patio is really nice, and there's a
-            koi fish pond. You can bring your animal, if it pleases you. The
-            owner may ask for a small deposit, and prefers that you crate them
-            if you leave them alone in your room.
+            Enjoy your stay in this fully remodeled, cozy home centrally located
+            in the City of Spokane. With fully furnished bedrooms, an at-home
+            gym, a complete kitchen, and shared living and dining rooms, Spokane
+            Traveling Nurses set the standard for communal living. Your stay
+            also includes on-site laundry, a koi pond and patio, dog run, and
+            plenty of off-street parking.
           </Paragraph>
           <Paragraph>
-            This is a paragraph about nearby things. It is a big house and it
-            has a kitchen, 47 bedrooms, the patio is really nice, and there's a
-            koi fish pond. You can bring your animal, if it pleases you. The
-            owner may ask for a small deposit, and prefers that you crate them
-            if you leave them alone in your room.
+            In each room we provide a TV with DishTV, a refridgerator and
+            freezer, a vanity, a mirror with shelving, a dresser, a queen-sized
+            bed with fresh bedding, and a bluetooth headset.
           </Paragraph>
         </section>
       </div>

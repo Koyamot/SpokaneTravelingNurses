@@ -50,10 +50,8 @@ const VisitorHeader = () => {
                             Property <DownOutlined />
                         </Link>
                     </Dropdown>
-                    <Link className="navLink" to='/tenantinfo'>Tenant Info</Link>
-                    <Link className="navLink book" to='/booking'>Book Now</Link>
-                    <Link className="navLink" to='/contact'>About Us</Link>
                     <Link className="navLink explore" to='/explore'>Explore Spokane!</Link>
+                    <Link className="navLink book" to='/booking'>Book Now</Link>
                 </nav>
             </header>
         </>

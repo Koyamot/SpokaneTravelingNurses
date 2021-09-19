@@ -1,16 +1,17 @@
 const rooms = [
   {
     room: [
-      "Refrigerator with freezer",
-      "Linens",
-      "Pillows", 
-      "Blankets",
+      "Private Room Key",
+      "Refrigerator with Freezer",
+      "Queen-Sized Mattress",
+      "Fresh Linens & Blankets",
       "Dresser",
       "32” TV with Dish TV",
-      "Vanity mirror",
-      "Desk",
-      "Tinted windows",
-      "Blackout curtains",
+      "Bluetooth Headset",
+      "Vanity Mirror with Shelving",
+      "Desk and Chair",
+      "Tinted Windows",
+      "Blackout Curtains",
     ],
   },
   {
