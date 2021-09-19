@@ -29,7 +29,7 @@ const rooms = [
           },
         ],
         picture:
-          "https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmVkcm9vbXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80",
+          "https://stnbe.s3.us-west-1.amazonaws.com/medium_rooma_00_4319f0dc3e.jpg",
       },
       {
         id: 2,
@@ -44,7 +44,7 @@ const rooms = [
           },
         ],
         picture:
-          "https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmVkcm9vbXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80",
+          "https://stnbe.s3.us-west-1.amazonaws.com/medium_rooma_00_4319f0dc3e.jpg",
       },
       {
         id: 3,
@@ -59,7 +59,7 @@ const rooms = [
           },
         ],
         picture:
-          "https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmVkcm9vbXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80",
+          "https://stnbe.s3.us-west-1.amazonaws.com/medium_roomi_01_8bec298c20.jpg",
       },
       {
         id: 4,
@@ -74,7 +74,7 @@ const rooms = [
           },
         ],
         picture:
-          "https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YmVkcm9vbXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80",
+          "https://stnbe.s3.us-west-1.amazonaws.com/medium_roomo_00_cf14d9623c.jpg",
       },
     ],
   },
