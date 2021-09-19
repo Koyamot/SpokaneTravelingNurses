@@ -1,7 +1,23 @@
 .single-room {
+
+  .pic-container {
+    margin: 0 auto;
     img {
-        width: 25%;
+      display: block;
+      margin: 0 auto;
+      height: 26.7rem;
+      width: inherit;
     }
+  }
+
+  .tiny-pic {
+    padding-right: 4rem;
+    img {
+      width: 5rem;
+      height: auto;
+    }
+  }
+
   .amenities-list {
     flex-wrap: wrap;
     height: 12rem;

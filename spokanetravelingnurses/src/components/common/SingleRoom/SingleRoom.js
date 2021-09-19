@@ -45,7 +45,7 @@ const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 function SingleRoom({ amenities }) {
   const [copied, setCopied] = useState(false);
-  const [featured, setFeatured] = useState()
+  const [featured, setFeatured] = useState("https://stnbe.s3.us-west-1.amazonaws.com/medium_rooma_00_4319f0dc3e.jpg");
   const textAreaRef = useRef(null);
   const { id } = useParams();
   const location = useLocation();
@@ -76,15 +76,16 @@ function SingleRoom({ amenities }) {
   if (error) return <p>DOH! :(</p>;
   const room = data.publicRoom;
   const pics = room.Pictures.map((pics) => {
-    const link = `${pics.formats.thumbnail.url}`;
+    const link = `${pics.formats.medium.url}`;
     return link;
   });
 
   console.log(pics);
 
-  const onClick = (pic) => {
-    setFeatured(pic)
-  }
+  const onClick = (e) => {
+    setFeatured(e.target.currentSrc);
+    console.log("This is the pic: ", featured);
+  };
 
   function copy(e) {
     textAreaRef.current.select();
@@ -97,13 +98,17 @@ function SingleRoom({ amenities }) {
   return (
     <div className="container single-room">
       <Title>{room.room_name}</Title>
-      <div><img src={featured} /></div>
       <div className="flex-row">
-      {pics.map((link, key) => (
-        <div onClick={(link) => onClick(link)}>
-        <img src={link} key={key} />
-        </div>
-      ))}
+      <div className="flex-column justify-center pic-options">
+        {pics.map((link, key) => (
+          <div className="tiny-pic" onClick={(e) => onClick(e)}>
+            <img src={link} key={key} />
+          </div>
+        ))}
+      </div>
+      <div className="pic-container">
+        <img src={featured} alt="room" />
+      </div>
       </div>
       <Paragraph>{room.description}</Paragraph>
       <Title level={4}>Each room includes:</Title>
