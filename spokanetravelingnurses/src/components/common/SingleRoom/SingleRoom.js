@@ -45,7 +45,6 @@ const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 function SingleRoom({ amenities }) {
   const [copied, setCopied] = useState(false);
-  const [featured, setFeatured] = useState("");
   const textAreaRef = useRef(null);
   const { id } = useParams();
   const location = useLocation();
@@ -54,6 +53,7 @@ function SingleRoom({ amenities }) {
       id: id,
     },
   });
+  const [featured, setFeatured] = useState(``);
 
   let authButton;
   if (location.pathname.includes("admin")) {
@@ -73,11 +73,15 @@ function SingleRoom({ amenities }) {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>DOH! :(</p>;
   const room = data.publicRoom;
+  console.log("This is the room: ", room)
+
   const pics = room.Pictures.map((pics) => {
     const link = `${pics.formats.medium.url}`;
     return link;
   });
 
+
+  console.log("These are pics: ", pics[0])
   const onClick = (e) => {
     setFeatured(e.target.currentSrc);
   };
