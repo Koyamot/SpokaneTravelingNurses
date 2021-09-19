@@ -33,13 +33,13 @@ const Landing = () => {
             Enjoy your stay in this fully remodeled, cozy home centrally located
             in the City of Spokane. With fully furnished bedrooms, an at-home
             gym, a complete kitchen, and shared living and dining rooms, Spokane
-            Traveling Nurses set the standard for communal living. Your stay
+            Traveling Nurses sets the standard for communal living. Your stay
             also includes on-site laundry, a koi pond and patio, dog run, and
             plenty of off-street parking.
           </Paragraph>
           <Paragraph>
-            In each room we provide a TV with DishTV, a refridgerator and
-            freezer, a vanity, a mirror with shelving, a dresser, a queen-sized
+            In each room we provide a TV with DishTV, a refrigerator and
+            freezer, a vanity mirror, a dresser, a queen-sized
             bed with fresh bedding, and a bluetooth headset.
           </Paragraph>
         </section>

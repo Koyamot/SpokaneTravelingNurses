@@ -55,8 +55,6 @@ function SingleRoom({ amenities }) {
     },
   });
 
-  console.log("These are amenities: ", amenities);
-
   let authButton;
   if (location.pathname.includes("admin")) {
     authButton = (
@@ -80,11 +78,8 @@ function SingleRoom({ amenities }) {
     return link;
   });
 
-  console.log(pics);
-
   const onClick = (e) => {
     setFeatured(e.target.currentSrc);
-    console.log("This is the pic: ", featured);
   };
 
   function copy(e) {

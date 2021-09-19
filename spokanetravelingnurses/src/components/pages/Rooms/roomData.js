@@ -33,7 +33,7 @@ const rooms = [
       },
       {
         id: 2,
-        name: "Room B",
+        name: "Room E",
         size: "10x15",
         included: [
           {
@@ -48,7 +48,7 @@ const rooms = [
       },
       {
         id: 3,
-        name: "Room C",
+        name: "Room I",
         size: "10x15",
         included: [
           {
@@ -63,7 +63,7 @@ const rooms = [
       },
       {
         id: 4,
-        name: "Room D",
+        name: "Room O",
         size: "10x15",
         included: [
           {
