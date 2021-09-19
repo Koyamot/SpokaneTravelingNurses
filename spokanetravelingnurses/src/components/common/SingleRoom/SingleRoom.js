@@ -73,7 +73,6 @@ function SingleRoom({ amenities }) {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>DOH! :(</p>;
   const room = data.publicRoom;
-  console.log("This is the room: ", room)
 
   const pics = room.Pictures.map((pics) => {
     const link = `${pics.formats.medium.url}`;

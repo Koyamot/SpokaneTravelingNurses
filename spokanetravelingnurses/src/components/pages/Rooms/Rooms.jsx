@@ -26,7 +26,6 @@ const RoomList = ({ rooms }) => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>DOH! :(</p>;
   const room = data.publicRooms.map((item) => item)
-  console.log("These are rooms: ", room[0].id)
   return (
     <div className="container room-list">
       {data.publicRooms.map((room) => (
@@ -39,7 +38,6 @@ const RoomList = ({ rooms }) => {
 };
 
 const Rooms = ({ room }) => {
-  console.log("Room info :", room)
   return (
     <div key={room.id} className="room-card">
       <img src={room.Pictures[0].formats.small.url} className="room-pic" alt="rooms" />
