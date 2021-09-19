@@ -45,7 +45,7 @@ const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 function SingleRoom({ amenities }) {
   const [copied, setCopied] = useState(false);
-  const [featured, setFeatured] = useState("https://stnbe.s3.us-west-1.amazonaws.com/medium_rooma_00_4319f0dc3e.jpg");
+  const [featured, setFeatured] = useState("");
   const textAreaRef = useRef(null);
   const { id } = useParams();
   const location = useLocation();
@@ -54,8 +54,6 @@ function SingleRoom({ amenities }) {
       id: id,
     },
   });
-
-  console.log("These are amenities: ", amenities);
 
   let authButton;
   if (location.pathname.includes("admin")) {
@@ -80,11 +78,8 @@ function SingleRoom({ amenities }) {
     return link;
   });
 
-  console.log(pics);
-
   const onClick = (e) => {
     setFeatured(e.target.currentSrc);
-    console.log("This is the pic: ", featured);
   };
 
   function copy(e) {

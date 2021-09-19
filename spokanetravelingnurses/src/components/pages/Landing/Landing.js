@@ -18,11 +18,10 @@ const Landing = () => {
         >
           <Title level={1}>Traveling Nurse Communal Living</Title>
           <Paragraph>
-            Spokane Traveling Nurses is ran by a husband and wife with years of
-            property management experience. They take pride in their properties,
-            with more than 10 rental properties under their care. The couple has
-            decided to flip their home of 25 years into a welcoming space for
-            traveling nurses visiting Spokane, WA.
+            Spokane Traveling Nurses is ran by a husband and wife with more than
+            40 years combined in property management. The couple has transformed their
+            home of 25 years into a welcoming space for traveling nurses
+            visiting Spokane, WA.
           </Paragraph>
           <Image src={img} preview={false} />
           <Title level={4}>708 S. Thor St. Spokane, WA 99202</Title>
@@ -33,14 +32,13 @@ const Landing = () => {
             Enjoy your stay in this fully remodeled, cozy home centrally located
             in the City of Spokane. With fully furnished bedrooms, an at-home
             gym, a complete kitchen, and shared living and dining rooms, Spokane
-            Traveling Nurses set the standard for communal living. Your stay
+            Traveling Nurses sets the standard for communal living. Your stay
             also includes on-site laundry, a koi pond and patio, dog run, and
             plenty of off-street parking.
           </Paragraph>
           <Paragraph>
-            In each room we provide a TV with DishTV, a refridgerator and
-            freezer, a vanity, a mirror with shelving, a dresser, a queen-sized
-            bed with fresh bedding, and a bluetooth headset.
+            In each room has a TV with DishTV, refrigerator and freezer, vanity
+            mirror, dresser, queen-sized bed, and bluetooth headsets.
           </Paragraph>
         </section>
       </div>
