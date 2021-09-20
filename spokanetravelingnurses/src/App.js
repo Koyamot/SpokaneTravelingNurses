@@ -28,7 +28,7 @@ const backendUrl = process.env.REACT_APP_BACKEND_URL;
 function App() {
   
   const link = createHttpLink({
-    uri: `${backendUrl}graphql`,
+    uri: `${backendUrl}/graphql`,
     credentials: 'same-origin'
   })
   const client = new ApolloClient({
