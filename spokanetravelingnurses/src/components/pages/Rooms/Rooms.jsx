@@ -22,11 +22,19 @@ const PUBLIC_ROOMS = gql`
 
 const RoomList = ({ rooms }) => {
   const { loading, error, data } = useQuery(PUBLIC_ROOMS, {});
-  console.log("these are the rooms: ", data)
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>DOH! :(</p>;
+  const room = data.publicRooms.map((item) => item)
+
+  const roomSort = room.sort(function(a, b) { 
+    return a.id - b.id  ||  a.name.localeCompare(b.name);
+  });
+  console.log("This is sorted rooms?: ", roomSort)
 
   return (
     <div className="container room-list">
-      {rooms.map((room) => (
+      {roomSort.map((room) => (
         <Link to={`/room/${room.id}`}>
           <Rooms key={room.id} room={room} />
         </Link>
@@ -36,11 +44,14 @@ const RoomList = ({ rooms }) => {
 };
 
 const Rooms = ({ room }) => {
+  
+  console.log("Check room id", room)
+
   return (
     <div key={room.id} className="room-card">
-      <img src={room.picture} className="room-pic" alt="rooms" />
+      <img src={room.Pictures[0].formats.small.url} className="room-pic" alt="rooms" />
       <div className="room-info">
-        <p>Room Name: {room.name}</p>
+        <p>{room.room_name}</p>
       </div>
     </div>
   );

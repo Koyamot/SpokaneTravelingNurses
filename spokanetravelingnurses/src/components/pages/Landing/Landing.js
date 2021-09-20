@@ -37,7 +37,7 @@ const Landing = () => {
             plenty of off-street parking.
           </Paragraph>
           <Paragraph>
-            In each room has a TV with DishTV, refrigerator and freezer, vanity
+            Each room has a TV with DishTV, refrigerator and freezer, vanity
             mirror, dresser, queen-sized bed, and bluetooth headsets.
           </Paragraph>
         </section>
