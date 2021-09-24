@@ -1,15 +1,5 @@
 .single-room {
 
-  .pic-container {
-    margin: 0 auto;
-    img {
-      display: block;
-      margin: 0 auto;
-      height: 26.7rem;
-      width: inherit;
-    }
-  }
-
   .tiny-pic {
     padding-right: 4rem;
     img {
@@ -22,5 +12,15 @@
     flex-wrap: wrap;
     height: 12rem;
     margin-bottom: 4rem;
+  }
+}
+
+.pic-container {
+  margin: 0 auto;
+  img {
+    display: block;
+    margin: 0 auto;
+    height: 26.7rem;
+    width: inherit;
   }
 }
