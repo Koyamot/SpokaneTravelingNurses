@@ -53,8 +53,11 @@ function SingleRoom({ amenities }) {
       id: id,
     },
   });
-  const [featured, setFeatured] = useState(``);
+  const [featured, setFeatured] = useState("");
 
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>DOH! :(</p>;
+  const image = `${data.publicRoom.Pictures[0].formats.small.url}`;
   let authButton;
   if (location.pathname.includes("admin")) {
     authButton = (
@@ -70,8 +73,6 @@ function SingleRoom({ amenities }) {
     );
   }
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>DOH! :(</p>;
   const room = data.publicRoom;
 
   const pics = room.Pictures.map((pics) => {
@@ -95,16 +96,22 @@ function SingleRoom({ amenities }) {
     <div className="container single-room">
       <Title>{room.room_name}</Title>
       <div className="flex-row">
-      <div className="flex-column justify-center pic-options">
-        {pics.map((link, key) => (
-          <div className="tiny-pic" onClick={(e) => onClick(e)}>
-            <img src={link} key={key} />
+        <div className="flex-column justify-center pic-options">
+          {pics.map((link, key) => (
+            <div className="tiny-pic" onClick={(e) => onClick(e)}>
+              <img src={link} key={key} />
+            </div>
+          ))}
+        </div>
+        {!featured ? (
+          <div className="pic-container">
+            <img src={image} alt="room" />
           </div>
-        ))}
-      </div>
-      <div className="pic-container">
-        <img src={featured} alt="room" />
-      </div>
+        ) : (
+          <div className="pic-container">
+            <img src={featured} alt="room" />
+          </div>
+        )}
       </div>
       <Paragraph>{room.description}</Paragraph>
       <Title level={4}>Each room includes:</Title>
