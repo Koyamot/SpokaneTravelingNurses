@@ -18,7 +18,7 @@ const Landing = () => {
         >
           <Title level={1}>Traveling Nurse Communal Living</Title>
           <Paragraph>
-            Spokane Traveling Nurses is ran by a husband and wife with more than
+            Spokane Traveling Nurses is ran by a husband and wife team with more than
             40 years combined in property management. The couple has transformed their
             home of 25 years into a welcoming space for traveling nurses
             visiting Spokane, WA.
