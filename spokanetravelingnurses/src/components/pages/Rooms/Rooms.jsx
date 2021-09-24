@@ -30,7 +30,6 @@ const RoomList = ({ rooms }) => {
   const roomSort = room.sort(function(a, b) { 
     return a.id - b.id  ||  a.name.localeCompare(b.name);
   });
-  console.log("This is sorted rooms?: ", roomSort)
 
   return (
     <div className="container room-list">
@@ -44,8 +43,6 @@ const RoomList = ({ rooms }) => {
 };
 
 const Rooms = ({ room }) => {
-  
-  console.log("Check room id", room)
 
   return (
     <div key={room.id} className="room-card">

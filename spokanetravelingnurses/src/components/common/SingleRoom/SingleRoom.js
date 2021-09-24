@@ -79,8 +79,6 @@ function SingleRoom({ amenities }) {
     return link;
   });
 
-
-  console.log("These are pics: ", pics[0])
   const onClick = (e) => {
     setFeatured(e.target.currentSrc);
   };
