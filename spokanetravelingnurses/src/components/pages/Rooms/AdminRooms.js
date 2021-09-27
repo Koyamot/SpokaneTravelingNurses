@@ -23,8 +23,6 @@ const PUBLIC_ROOMS = gql`
 
 const token = localStorage.getItem("token");
 
-const backendUrl = process.env.REACT_APP_BACKEND_URL;
-
 const AdminRooms = () => {
   const { loading, error, data } = useQuery(PUBLIC_ROOMS, {
     context: {
@@ -36,11 +34,12 @@ const AdminRooms = () => {
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>DOH! :(</p>;
-
+  console.log(data);
   return (
     <div className="container room-list">
       {data.publicRooms.map((room) => {
-        return !room.room.Occupied ? (
+        console.log("This is room: ", room);
+        return !room.room ? (
           <Link to={`/admin/room/${room.id}`} key={room.id}>
             <RoomsList room={room} />
           </Link>
@@ -55,9 +54,10 @@ const AdminRooms = () => {
 };
 
 const RoomsList = ({ room }) => {
-  const picture =
-    `${backendUrl}${room.Pictures[0].formats.small.url}`;
-  const status = room.room.Occupied;
+  const picture = `${room.Pictures[0].formats.small.url}`;
+
+  console.log("This is picture: ", picture);
+  const status = room.room;
 
   let title, availability;
   if (!status) {
@@ -69,12 +69,19 @@ const RoomsList = ({ room }) => {
     availability = <p>Click for details.</p>;
   } else {
     title = (
-      <Title level={4} disabled>
-        Unavailable
-      </Title>
+      <>
+        <Title level={4} disabled>
+          Unavailable
+        </Title>
+        {room.room.endDate ? (
+          <p>Available on {room.room.endDate}</p>
+        ) : (
+          <p>Available on TBD</p>
+        )}
+      </>
     );
-    availability = <p>Available on {room.room.endDate}</p>;
   }
+
   return (
     <div className="room-card" key={room.id}>
       {title}

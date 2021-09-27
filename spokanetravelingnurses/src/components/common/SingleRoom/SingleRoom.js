@@ -98,8 +98,8 @@ function SingleRoom({ amenities }) {
       <div className="flex-row">
         <div className="flex-column justify-center pic-options">
           {pics.map((link, key) => (
-            <div className="tiny-pic" onClick={(e) => onClick(e)}>
-              <img src={link} key={key} />
+            <div key={key} className="tiny-pic" onClick={(e) => onClick(e)}>
+              <img src={link} alt="room thumbnail"/>
             </div>
           ))}
         </div>
