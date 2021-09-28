@@ -1,13 +1,4 @@
 .single-room {
-
-  .tiny-pic {
-    padding-right: 4rem;
-    img {
-      width: 5rem;
-      height: auto;
-    }
-  }
-
   .amenities-list {
     flex-wrap: wrap;
     height: 12rem;
@@ -16,11 +7,28 @@
 }
 
 .pic-container {
-  margin: 0 auto;
+  margin: auto;
+  width: 100%;
+  border: 1px solid $light-grey;
+  border-radius: 8px;
   img {
     display: block;
     margin: 0 auto;
     height: 26.7rem;
-    width: inherit;
+  }
+}
+
+.tiny-pic {
+  margin: 0 4rem 2rem 0;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  img {
+    width: 5rem;
+    height: auto;
   }
 }
