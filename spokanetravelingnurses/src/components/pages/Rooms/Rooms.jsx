@@ -34,8 +34,8 @@ const RoomList = ({ rooms }) => {
   return (
     <div className="container room-list">
       {roomSort.map((room) => (
-        <Link to={`/room/${room.id}`}>
-          <Rooms key={room.id} room={room} />
+        <Link to={`/room/${room.id}`} key={room.id}>
+          <Rooms room={room} />
         </Link>
       ))}
     </div>
