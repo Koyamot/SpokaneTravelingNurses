@@ -38,7 +38,6 @@ const AdminRooms = () => {
   return (
     <div className="container room-list">
       {data.publicRooms.map((room) => {
-        console.log("This is room: ", room);
         return !room.room ? (
           <Link to={`/admin/room/${room.id}`} key={room.id}>
             <RoomsList room={room} />
