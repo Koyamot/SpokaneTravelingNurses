@@ -8,10 +8,12 @@ const PUBLIC_ROOMS = gql`
       id
       room_name
       roomNumber {
+        id
         Occupied
       }
       id
       Pictures {
+        id
         formats
       }
     }

@@ -8,7 +8,7 @@ const PUBLIC_ROOMS = gql`
     publicRooms {
       id
       room_name
-      room {
+      roomNumber {
         id
         Occupied
         endDate
