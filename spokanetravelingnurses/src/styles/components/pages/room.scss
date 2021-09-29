@@ -6,6 +6,10 @@
   .hide {
     order: 5;
   }
+  .disable {
+    order: 5;
+    visibility: hidden;
+  }
   .room-card {
     display: inline-block;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
