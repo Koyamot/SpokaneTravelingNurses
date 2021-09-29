@@ -43,7 +43,8 @@ const Tour = () => {
   const [featuredUpstairs, setFeaturedUpstairs] = useState("");
   const [featuredUpstairsBathroom, setFeaturedUpstairsBathroom] = useState("");
   const [featuredDiningRoom, setFeaturedDiningRoom] = useState("");
-  const [featuredDownstairsBathroom, setFeaturedDownstairsBathroom] = useState("");
+  const [featuredDownstairsBathroom, setFeaturedDownstairsBathroom] =
+    useState("");
   const { loading, error, data } = useQuery(GET_SHARED_SPACES, {});
   if (loading) return <p>Loading...</p>;
   if (error) return <p>DOH! :(</p>;
@@ -75,7 +76,7 @@ const Tour = () => {
     return link;
   });
 
-  const downstairsBathroom = shared.upstairs_bathroom.map((pics) => {
+  const downstairsBathroom = shared.downstairs_bathroom.map((pics) => {
     const link = `${pics.formats.medium.url}`;
     return link;
   });
@@ -88,9 +89,9 @@ const Tour = () => {
 
   const imageUpstairsBathroom = `${shared.upstairs_bathroom[0].formats.medium.url}`;
 
-  const imageDownstairsBathroom = `${shared.upstairs_bathroom[0].formats.medium.url}`;
+  const imageDownstairsBathroom = `${shared.downstairs_bathroom[0].formats.medium.url}`;
 
-const imageDiningRoom = `${shared.diningroom[0].formats.medium.url}`;
+  const imageDiningRoom = `${shared.diningroom[0].formats.medium.url}`;
 
   const onKitchen = (e) => {
     setFeaturedKitchen(e.target.currentSrc);
@@ -104,7 +105,7 @@ const imageDiningRoom = `${shared.diningroom[0].formats.medium.url}`;
   const onUpstairsBathroom = (e) => {
     setFeaturedUpstairsBathroom(e.target.currentSrc);
   };
-  const onDiningRoom= (e) => {
+  const onDiningRoom = (e) => {
     setFeaturedDiningRoom(e.target.currentSrc);
   };
   const onDownstairsBathroom = (e) => {
@@ -218,46 +219,58 @@ const imageDiningRoom = `${shared.diningroom[0].formats.medium.url}`;
         </div>
       </section>
       <section className="tour-photo">
-      <Title level={4} style={{  textAlign:"center" }}>Upstairs Bathroom</Title>
-      <div className="flex-row">
-        <div className="flex-column justify-center pic-options">
-          {upstairsBathroom.map((link, key) => (
-            <div key={key} className="tiny-pic" onClick={(e) => onUpstairsBathroom(e)}>
-              <img src={link} alt="room thumbnail"/>
+        <Title level={4} style={{ textAlign: "center" }}>
+          Upstairs Bathroom
+        </Title>
+        <div className="flex-row">
+          <div className="flex-column justify-center pic-options">
+            {upstairsBathroom.map((link, key) => (
+              <div
+                key={key}
+                className="tiny-pic"
+                onClick={(e) => onUpstairsBathroom(e)}
+              >
+                <img src={link} alt="room thumbnail" />
+              </div>
+            ))}
+          </div>
+          {!featuredUpstairsBathroom ? (
+            <div className="pic-container">
+              <img src={imageUpstairsBathroom} alt="room" />
             </div>
-          ))}
+          ) : (
+            <div className="pic-container">
+              <img src={featuredUpstairsBathroom} alt="room" />
+            </div>
+          )}
         </div>
-        {!featuredUpstairsBathroom ? (
-          <div className="pic-container">
-            <img src={imageUpstairsBathroom} alt="room" />
-          </div>
-        ) : (
-          <div className="pic-container">
-            <img src={featuredUpstairsBathroom} alt="room" />
-          </div>
-        )}
-      </div>
       </section>
       <section className="tour-photo">
-      <Title level={4} style={{  textAlign:"center" }}>Downstairs Bathroom</Title>
-      <div className="flex-row">
-        <div className="flex-column justify-center pic-options">
-          {downstairsBathroom.map((link, key) => (
-            <div key={key} className="tiny-pic" onClick={(e) => onDownstairsBathroom(e)}>
-              <img src={link} alt="room thumbnail"/>
+        <Title level={4} style={{ textAlign: "center" }}>
+          Downstairs Bathroom
+        </Title>
+        <div className="flex-row">
+          <div className="flex-column justify-center pic-options">
+            {downstairsBathroom.map((link, key) => (
+              <div
+                key={key}
+                className="tiny-pic"
+                onClick={(e) => onDownstairsBathroom(e)}
+              >
+                <img src={link} alt="room thumbnail" />
+              </div>
+            ))}
+          </div>
+          {!featuredDownstairsBathroom ? (
+            <div className="pic-container">
+              <img src={imageDownstairsBathroom} alt="room" />
             </div>
-          ))}
+          ) : (
+            <div className="pic-container">
+              <img src={featuredDownstairsBathroom} alt="room" />
+            </div>
+          )}
         </div>
-        {!featuredDownstairsBathroom ? (
-          <div className="pic-container">
-            <img src={imageDownstairsBathroom} alt="room" />
-          </div>
-        ) : (
-          <div className="pic-container">
-            <img src={featuredDownstairsBathroom} alt="room" />
-          </div>
-        )}
-      </div>
       </section>
     </div>
   );

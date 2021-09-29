@@ -33,7 +33,6 @@ const RoomList = ({ rooms }) => {
   return (
     <div className="container room-list">
       {room.map((room) => {
-        console.log("This is rooms: ", room)
         return !room.roomNumber.Occupied ? (
           <Link to={`/room/${room.id}`} key={room.id}>
             <Rooms room={room} />
