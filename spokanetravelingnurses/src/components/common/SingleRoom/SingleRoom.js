@@ -96,8 +96,8 @@ function SingleRoom({ amenities }) {
       <Title>{room.room_name}</Title>
       <div className="flex-row">
         <div className="flex-column justify-center pic-options">
-          {pics.map((link, key) => (
-            <div key={key} className="tiny-pic" onClick={(e) => onClick(e)}>
+          {pics.map((link, i) => (
+            <div key={i} className="tiny-pic" onClick={(e) => onClick(e)}>
               <img src={link} alt="room thumbnail"/>
             </div>
           ))}
@@ -115,8 +115,8 @@ function SingleRoom({ amenities }) {
       <Paragraph>{room.description}</Paragraph>
       <Title level={4}>Each room includes:</Title>
       <div className="flex-column amenities-list">
-        {amenities.map((item) => (
-          <Paragraph>{item}</Paragraph>
+        {amenities.map((item, i) => (
+          <Paragraph key={i}>{item}</Paragraph>
         ))}
       </div>
       <div className="flex-column align-center copy-link-box">

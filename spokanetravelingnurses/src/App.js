@@ -22,6 +22,7 @@ import {
 import { LogIn } from "./components/pages/LogIn";
 
 import { rooms } from "./components/pages/Rooms/roomData";
+import { Explore } from "./components/pages/Explore";
 
 const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
@@ -57,7 +58,7 @@ function App() {
           <Route path="/tour" component={Tour} />
           <Route path="/contact" component={Contact} />
           <Route path="/booking" component={Booking} exact />
-          <Route path="/explore" component={Landing} />
+          <Route path="/explore" component={Explore} />
           <Footer />
         </Fragment>
       </Switch>

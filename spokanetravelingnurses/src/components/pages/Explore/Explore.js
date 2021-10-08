@@ -1,13 +1,67 @@
-import Title from 'antd/lib/typography/Title'
-import React from 'react'
+import Title from "antd/lib/typography/Title";
+import React from "react";
+import { resources } from "./guideResources";
 
 const Explore = () => {
-    return (
-        <div>
-            <Title level={2}>Hositals near by:</Title>
+  const explore = resources[0].explore;
+  const hospital = resources[1].hospitals;
+  const stores = resources[2].stores;
+
+  console.log(stores)
+
+  return (
+    <div className="container">
+      <Title level={2}>Let us help you navigate your way around Spokane:</Title>
+      <section className="resource_holder">
+        <Title level={2}>Hospitals Near By:</Title>
+        <div className="flex-row justify-even wrap">
+        {hospital.map((hos, i) => (
+          <div key={i} className="resource_card flex-row justify-space">
+              <div>
+            <Title level={4}>{hos.name}</Title>
+            <div className="flex-col justify-even align-center">
+              <p>Address: {hos.address}</p>
+              <p>Distance from house: {hos.miles}</p>
+            </div>
+            </div>
+            <img src={hos.img} alt={hos.alt} />
+          </div>
+        ))}
         </div>
-    )
-}
+      </section>
+      <section className="resource_holder">
+        <Title level={2}>Discover Spokane:</Title>
+        <div className="flex-row wrap">
+        {explore.map((exp, i) => (
+          <div key={i} className="resource_card wider">
+            <Title level={4}>{exp.title}</Title>
+            <div className="flex-row justify-space align-center">
+              <p>
+                Website address:{" "}
+                <a className="underline" href={exp.link}>
+                  {exp.link}
+                </a>
+              </p>
+              <a className="underline pdf_link" href={exp.link}>
+                PDF Version
+              </a>
+            </div>
+          </div>
+        ))}
+        </div>
+      </section>
+      <section className="resource_holder">
+      <Title level={2}>Stores near by:</Title>
+      <div className="flex-row justify-even wrap">
+        {stores.map((store, i) => (
+          <div key={i} className="resource_label">
+            <Title level={4}>{store}</Title>
+          </div>
+        ))}
+        </div>
+      </section>
+    </div>
+  );
+};
 
-export default Explore
-
+export default Explore;

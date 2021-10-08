@@ -37,12 +37,6 @@ const Footer = () => {
             Property <DownOutlined />
           </Link>
         </Dropdown>
-        <Link className="navLink" to="/tenants">
-          Tenant Info
-        </Link>
-        <Link className="navLink" to="/contact">
-          About Us
-        </Link>
         <Link className="navLink explore" to="/explore">
           Explore Spokane!
         </Link>
