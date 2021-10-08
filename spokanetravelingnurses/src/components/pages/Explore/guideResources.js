@@ -5,7 +5,7 @@ const resources = [
         id: 0,
         title: "Spokane Visitors Guide",
         link: "https://www.visitspokane.com/",
-        pdf: "https://www.visitspokane.com/",
+        pdf: "https://drive.google.com/file/d/1iVnVaMxYlt0H0AeBjnaeCE617K6On3xz/view?usp=sharing",
         description: "Spokane's visitor guide has everything you need",
       },
     ],

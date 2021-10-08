@@ -42,7 +42,7 @@ const Explore = () => {
                   {exp.link}
                 </a>
               </p>
-              <a className="underline pdf_link" href={exp.link}>
+              <a className="underline pdf_link" href={exp.pdf}>
                 PDF Version
               </a>
             </div>
