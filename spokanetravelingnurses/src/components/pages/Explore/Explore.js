@@ -22,6 +22,7 @@ const Explore = () => {
             <div className="flex-col justify-even align-center">
               <p>Address: {hos.address}</p>
               <p>Distance from house: {hos.miles}</p>
+              <a href={hos.link} className="underline" target="_blank">Go to Website</a>
             </div>
             </div>
             <img src={hos.img} alt={hos.alt} />
@@ -38,11 +39,11 @@ const Explore = () => {
             <div className="flex-row justify-space align-center">
               <p>
                 Website address:{" "}
-                <a className="underline" href={exp.link}>
+                <a className="underline" href={exp.link} target="_blank">
                   {exp.link}
                 </a>
               </p>
-              <a className="underline pdf_link" href={exp.pdf}>
+              <a className="underline pdf_link" href={exp.pdf} target="_blank">
                 PDF Version
               </a>
             </div>
