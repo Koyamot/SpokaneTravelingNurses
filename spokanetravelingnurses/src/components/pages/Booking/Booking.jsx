@@ -111,7 +111,7 @@ const Booking = () => {
           </label>
         </div>
         <p className="grey-italicized">
-          *Please be aware tht all dates are tentative. We thank you for your
+          *Please be aware that all dates are tentative. We thank you for your
           flexibility.
         </p>
         <label>
