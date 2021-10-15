@@ -24,7 +24,7 @@ const Landing = () => {
             <i>YOUR HOME AWAY FROM HOME</i>
           </Title>
           <Paragraph>
-            Spokane Traveling Nurses is run by a husband and wife team with more
+            Spokane Traveling Nurses is ran by a husband and wife team with more
             than 40 years combined in property management. The couple has
             transformed their home of 25 years into a welcoming space for
             traveling nurses visiting Spokane, WA.
