@@ -3,12 +3,10 @@ import { Route, Switch } from "react-router-dom";
 import SecureRoute from "./components/api/SecureRoute";
 import { createHttpLink, ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import {
-  AdminHeader,
   Footer,
   VisitorHeader,
   SingleRoom,
 } from "./components/common";
-import RenderHeader from "./components/common";
 import {
   Amenities,
   Landing,

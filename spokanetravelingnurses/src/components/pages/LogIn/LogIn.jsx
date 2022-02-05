@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 
-import { Form, Input, Button, Checkbox, Typography } from "antd";
-
-const { Title, Paragraph } = Typography;
+import { Form, Input, Button, Checkbox } from "antd";
 
 const backendUrl = process.env.REACT_APP_BACKEND_URL;
 

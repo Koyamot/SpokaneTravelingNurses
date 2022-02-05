@@ -81,7 +81,7 @@ const Booking = () => {
             Phone Number:
             <input
               type="tel"
-              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+              pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
               placeholder="XXX-XXX-XXX"
               name="ph_number"
               required

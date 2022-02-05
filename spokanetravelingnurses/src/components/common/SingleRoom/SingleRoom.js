@@ -4,25 +4,6 @@ import { useQuery, gql } from "@apollo/client";
 import { Link, useLocation, useParams } from "react-router-dom";
 import Title from "antd/lib/typography/Title";
 
-const GET_SINGLE_PUBLIC_ROOM = gql`
-  query getSingleRoom($id: ID!) {
-    publicRoom(id: $id) {
-      id
-      room_name
-      room {
-        id
-        Occupied
-        endDate
-        public_link
-      }
-      Pictures {
-        id
-        formats
-      }
-    }
-  }
-`;
-
 const GET_SINGLE_ROOM = gql`
   query getSinglePublicRoom($id: ID!) {
     publicRoom(id: $id) {
@@ -39,8 +20,6 @@ const GET_SINGLE_ROOM = gql`
     }
   }
 `;
-
-const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 function SingleRoom({ amenities }) {
   const [copied, setCopied] = useState(false);

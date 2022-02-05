@@ -26,9 +26,6 @@ const RoomList = ({ rooms }) => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>DOH! :(</p>;
   const room = data.publicRooms.map((item) => item);
-  const roomSort = room.sort(function (a, b) {
-    return a.id - b.id || a.name.localeCompare(b.name);
-  });
 
   return (
     <div className="container room-list">

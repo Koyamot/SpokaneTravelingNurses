@@ -22,21 +22,6 @@ const ROOMS = gql`
   }
 `;
 
-const PUBLIC_ROOMS = gql`
-  query getPublicRooms {
-    publicRooms {
-      id
-      room {
-        Occupied
-      }
-      Pictures {
-        id
-        formats
-      }
-    }
-  }
-`;
-
 export const Admin = () => {
   const token = localStorage.getItem("token");
   const {
