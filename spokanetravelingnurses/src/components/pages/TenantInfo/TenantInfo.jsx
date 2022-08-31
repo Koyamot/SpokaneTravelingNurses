@@ -1,12 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Paragraph from "antd/lib/typography/Paragraph";
 import Title from "antd/lib/typography/Title";
 import { Button } from "antd";
 import { DownloadOutlined } from "@ant-design/icons";
-import { Image } from "antd";
 
-import payment from "../../../assets/payment.png";
+
+import payment from "../../../assets/payment.png"
 
 const TenantInfo = () => {
   return (
@@ -18,19 +18,18 @@ const TenantInfo = () => {
         the lease and e-mail it to host@spokanetravelingnurses.com.
       </Paragraph>
       </section>
-      <Link to="/download/lease.pdf" target="_blank" download>
+      {/* <Link to="/download/lease.pdf" target="_blank" download> */}
         <Button type="default" icon={<DownloadOutlined />} size="large">
           Download
         </Button>
-      </Link>
+      {/* </Link> */}
       <section className="resource_holder">
       <Title level={3}>Payment Information</Title>
       <Paragraph>
         The host tries to be as flexible as possible in regards to rent payment. Here are the types of payment they accept: 
       </Paragraph>
       <div className="payments">
-        <img scr={payment} alt="payment types"/>
-        <Image scr="../../../assets/payment.png" preview={false} alt="payment"/>
+        <img src={payment} className="payment-type" alt="payment types"/>
       </div>
       </section>
     </div>
