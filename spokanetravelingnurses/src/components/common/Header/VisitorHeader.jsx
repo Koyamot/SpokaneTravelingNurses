@@ -45,7 +45,7 @@ const VisitorHeader = () => {
           justifyContent: "center",
         }}
       >
-        <Title>Welcome, Traveling Nurses!</Title>
+        <Title>Welcome, Traveling Nurses and Professionals!</Title>
       </div>
       <header>
         <nav>

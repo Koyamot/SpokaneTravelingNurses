@@ -16,7 +16,7 @@ const Landing = () => {
             alignItems: "center",
           }}
         >
-          <Title level={1}>Traveling Nurse Communal Living</Title>
+          <Title level={2}>Traveling Nurse and Professional Communal Living</Title>
 
           <Image src={img} preview={false} />
           <Title level={4}>708 S. Thor St. Spokane, WA 99202</Title>
