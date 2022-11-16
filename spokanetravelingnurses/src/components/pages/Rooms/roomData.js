@@ -125,6 +125,40 @@ const rooms = [
       },
     ],
   },
+  {
+    tour: [
+      {
+        livingRoom: [
+          `${roomsUrl}medium_livingroom_00_74d0cd00cc.jpg`,
+          `${roomsUrl}medium_livingroom_01_5e0e3a488d.jpg`,
+        ],
+        kitchen: [
+          `${roomsUrl}medium_kitchen_00_8d9d737d73.jpg`,
+          `${roomsUrl}medium_kitchen_01_2910ba357a.jpg`,
+          `${roomsUrl}medium_kitchen_02_fb58345546.jpg`,
+          `${roomsUrl}medium_kitchen_03_8d0a569a16.jpg`,
+        ],
+        upstairs: [
+          `${roomsUrl}medium_upstairs_00_fa404f804b.jpg`,
+          `${roomsUrl}medium_upstairs_01_44485bd1ef.jpg`,
+          `${roomsUrl}medium_upstairs_02_8ee4f2284f.jpg`,
+          `${roomsUrl}medium_upstairs_03_7a4ca788ed.jpg`,
+          `${roomsUrl}medium_upstairs_04_0ddd1ca9f0.jpg`,
+        ],
+        upstairsBathroom: [
+          `${roomsUrl}medium_upstairs_bathroom00_c47258a4a4.jpg`,
+          `${roomsUrl}medium_upstairs_bathroom01_50f18d263f.jpg`,
+        ],
+        diningRoom: [
+          `${roomsUrl}medium_dining_00_2415798e91.jpg`,
+          `${roomsUrl}medium_dining_01_56067c2f71.jpg`,
+        ],
+        downstairsBathroom: [
+          `${roomsUrl}medium_downstairs_bathroom_00_cbe29f2406.jpg`,
+        ],
+      },
+    ],
+  },
 ];
 
 module.exports = {

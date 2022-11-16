@@ -40,7 +40,7 @@ function App() {
           <Route path="/room/:id">
             <SingleRoom amenities={rooms[0].room} room={rooms[1].roomInfo}/>
           </Route>
-          <Route path="/tour" component={Tour} />
+          <Route path="/tour" render={() => <Tour sharedSpace={rooms[2].tour} />}/>
           <Route path="/contact" component={Contact} />
           <Route path="/booking" component={Booking} exact />
           <Route path="/explore" component={Explore} />
