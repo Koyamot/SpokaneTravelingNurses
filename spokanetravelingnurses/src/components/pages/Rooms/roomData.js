@@ -1,3 +1,4 @@
+const roomsUrl = process.env.REACT_APP_S3_BUCKET;
 const rooms = [
   {
     room: [
@@ -17,9 +18,10 @@ const rooms = [
   {
     roomInfo: [
       {
-        id: 1,
+        id: 0,
         name: "Room A",
         size: "10x15",
+        link: "https://spokanetravelingnurses.com/room/",
         included: [
           {
             tv: "32' TV",
@@ -28,13 +30,35 @@ const rooms = [
             dresser: "3 drawer dresser",
           },
         ],
-        picture:
-          "https://stnbe.s3.us-west-1.amazonaws.com/medium_rooma_00_4319f0dc3e.jpg",
+        pictures: [
+          `${roomsUrl}medium_rooma_00_4319f0dc3e.jpg`,
+          `${roomsUrl}medium_rooma_01_e90099156f.jpg`,
+          `${roomsUrl}medium_rooma_02_292ffa654d.jpg`,
+        ],
+      },
+      {
+        id: 1,
+        name: "Room E",
+        size: "10x15",
+        link: "https://spokanetravelingnurses.com/room/",
+        included: [
+          {
+            tv: "32' TV",
+            bathroom: "shared",
+            kitchen: "shared",
+            dresser: "3 drawer dresser",
+          },
+        ],
+        pictures: [
+          `${roomsUrl}medium_roome_00_fba942e901.jpg`,
+          `${roomsUrl}medium_roome_01_38b29ba8cf.jpg`,
+        ],
       },
       {
         id: 2,
-        name: "Room E",
+        name: "Room I",
         size: "10x15",
+        link: "https://spokanetravelingnurses.com/room/",
         included: [
           {
             tv: "32' TV",
@@ -43,13 +67,16 @@ const rooms = [
             dresser: "3 drawer dresser",
           },
         ],
-        picture:
-          "https://stnbe.s3.us-west-1.amazonaws.com/medium_rooma_00_4319f0dc3e.jpg",
+        pictures: [
+          `${roomsUrl}medium_roomi_00_e7c291e192.jpg`,
+          `${roomsUrl}medium_roomi_01_8bec298c20.jpg`,
+        ],
       },
       {
         id: 3,
-        name: "Room I",
+        name: "Room O",
         size: "10x15",
+        link: "https://spokanetravelingnurses.com/room/",
         included: [
           {
             tv: "32' TV",
@@ -58,13 +85,13 @@ const rooms = [
             dresser: "3 drawer dresser",
           },
         ],
-        picture:
-          "https://stnbe.s3.us-west-1.amazonaws.com/medium_roomi_01_8bec298c20.jpg",
+        pictures: [`${roomsUrl}medium_roomo_00_cf14d9623c.jpg`],
       },
       {
         id: 4,
-        name: "Room O",
+        name: "Room U",
         size: "10x15",
+        link: "https://spokanetravelingnurses.com/room/",
         included: [
           {
             tv: "32' TV",
@@ -73,8 +100,28 @@ const rooms = [
             dresser: "3 drawer dresser",
           },
         ],
-        picture:
-          "https://stnbe.s3.us-west-1.amazonaws.com/medium_roomo_00_cf14d9623c.jpg",
+        pictures: [
+          `${roomsUrl}medium_roomu_00_c7b2df1883.jpg`,
+          `${roomsUrl}medium_roomu_01_9ab66f9ae3.jpg`,
+        ],
+      },
+      {
+        id: 5,
+        name: "Room Y",
+        size: "10x15",
+        link: "https://spokanetravelingnurses.com/room/",
+        included: [
+          {
+            tv: "32' TV",
+            bathroom: "shared",
+            kitchen: "shared",
+            dresser: "3 drawer dresser",
+          },
+        ],
+        pictures: [
+          `${roomsUrl}medium_roomy_00_14564dd5d4.jpg`,
+          `${roomsUrl}medium_roomy_01_1fe0f5ea41.jpg`,
+        ],
       },
     ],
   },

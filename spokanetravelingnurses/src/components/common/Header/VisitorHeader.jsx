@@ -12,17 +12,17 @@ const { Title } = Typography;
 
 const menu = (
   <Menu>
-    <Menu.Item>
+    <Menu.Item key="tour">
       <Link className="navLink" to="/tour">
         Tour
       </Link>
     </Menu.Item>
-    <Menu.Item>
+    <Menu.Item key="rooms">
       <Link className="navLink" to="/rooms">
         Rooms
       </Link>
     </Menu.Item>
-    <Menu.Item>
+    <Menu.Item key="amenities">
       <Link className="navLink" to="/amenities">
         Amenities
       </Link>
@@ -61,6 +61,9 @@ const VisitorHeader = () => {
               Property <DownOutlined />
             </Link>
           </Dropdown>
+          <Link className="navLink" to="/tenantinfo">
+            Lease & Tenant Info
+          </Link>
           <Link className="navLink explore" to="/explore">
             Explore Spokane!
           </Link>
