@@ -1,43 +1,8 @@
 import React, { useState } from "react";
-import { useQuery, gql } from "@apollo/client";
 import { Typography } from "antd";
 const { Title } = Typography;
 
-const GET_SHARED_SPACES = gql`
-  query sharedSpaces {
-    sharedSpace {
-      upstairs {
-        id
-        formats
-      }
-      upstairs_bathroom {
-        id
-        formats
-      }
-      livingroom {
-        id
-        formats
-      }
-      diningroom {
-        id
-        formats
-      }
-      downstairs_bathroom {
-        id
-        formats
-      }
-      kitchen {
-        id
-        formats
-      }
-      outside {
-        id
-        formats
-      }
-    }
-  }
-`;
-const Tour = () => {
+const Tour = ({sharedSpace}) => {
   const [featuredLivingRoom, setFeaturedLivingRoom] = useState("");
   const [featuredKitchen, setFeaturedKitchen] = useState("");
   const [featuredUpstairs, setFeaturedUpstairs] = useState("");
@@ -45,53 +10,48 @@ const Tour = () => {
   const [featuredDiningRoom, setFeaturedDiningRoom] = useState("");
   const [featuredDownstairsBathroom, setFeaturedDownstairsBathroom] =
     useState("");
-  const { loading, error, data } = useQuery(GET_SHARED_SPACES, {});
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>DOH! :(</p>;
-
-  const shared = data.sharedSpace;
-
-  const livingRoom = shared.livingroom.map((pics) => {
-    const link = `${pics.formats.medium.url}`;
+  const shared = sharedSpace[0];
+  const livingRoom = shared.livingRoom.map((pics) => {
+    const link = `${pics}`;
     return link;
   });
-
+  console.log(livingRoom)
   const kitchen = shared.kitchen.map((pics) => {
-    const link = `${pics.formats.medium.url}`;
+    const link = `${pics}`;
     return link;
   });
 
   const upstairs = shared.upstairs.map((pics) => {
-    const link = `${pics.formats.medium.url}`;
+    const link = `${pics}`;
     return link;
   });
 
-  const upstairsBathroom = shared.upstairs_bathroom.map((pics) => {
-    const link = `${pics.formats.medium.url}`;
+  const upstairsBathroom = shared.upstairsBathroom.map((pics) => {
+    const link = `${pics}`;
     return link;
   });
 
-  const diningRoom = shared.diningroom.map((pics) => {
-    const link = `${pics.formats.medium.url}`;
+  const diningRoom = shared.diningRoom.map((pics) => {
+    const link = `${pics}`;
     return link;
   });
 
-  const downstairsBathroom = shared.downstairs_bathroom.map((pics) => {
-    const link = `${pics.formats.medium.url}`;
+  const downstairsBathroom = shared.downstairsBathroom.map((pics) => {
+    const link = `${pics}`;
     return link;
   });
 
-  const imageLivingRoom = `${shared.livingroom[0].formats.medium.url}`;
+  const imageLivingRoom = `${shared.livingRoom[0]}`;
 
-  const imageKitchen = `${shared.kitchen[0].formats.medium.url}`;
+  const imageKitchen = `${shared.kitchen[0]}`;
 
-  const imageUpstairs = `${shared.upstairs[0].formats.medium.url}`;
+  const imageUpstairs = `${shared.upstairs[0]}`;
 
-  const imageUpstairsBathroom = `${shared.upstairs_bathroom[0].formats.medium.url}`;
+  const imageUpstairsBathroom = `${shared.upstairsBathroom[0]}`;
 
-  const imageDownstairsBathroom = `${shared.downstairs_bathroom[0].formats.medium.url}`;
+  const imageDownstairsBathroom = `${shared.downstairsBathroom[0]}`;
 
-  const imageDiningRoom = `${shared.diningroom[0].formats.medium.url}`;
+  const imageDiningRoom = `${shared.diningRoom[0]}`;
 
   const onKitchen = (e) => {
     setFeaturedKitchen(e.target.currentSrc);
