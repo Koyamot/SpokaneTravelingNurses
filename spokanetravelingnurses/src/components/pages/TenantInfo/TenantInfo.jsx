@@ -1,11 +1,11 @@
 import React from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Paragraph from "antd/lib/typography/Paragraph";
 import Title from "antd/lib/typography/Title";
 import { Button } from "antd";
 import { DownloadOutlined } from "@ant-design/icons";
 
-
+import lease from "../../../assets/lease.pdf"
 import payment from "../../../assets/payment.png"
 
 const TenantInfo = () => {
@@ -18,11 +18,11 @@ const TenantInfo = () => {
         the lease and e-mail it to host@spokanetravelingnurses.com.
       </Paragraph>
       </section>
-      {/* <Link to="/download/lease.pdf" target="_blank" download> */}
+      <Link to={lease} target="_blank" download>
         <Button type="default" icon={<DownloadOutlined />} size="large">
           Download
         </Button>
-      {/* </Link> */}
+      </Link>
       <section className="resource_holder">
       <Title level={3}>Payment Information</Title>
       <Paragraph>
