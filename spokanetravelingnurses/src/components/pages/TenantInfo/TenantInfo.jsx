@@ -14,8 +14,7 @@ const TenantInfo = () => {
       <section>
       <Title level={3}>Lease Agreement</Title>
       <Paragraph>
-        Please download and read the lease. If you decide Spokane Traveling Nurses is the right home for you, please fill out
-        the lease and e-mail it to host@spokanetravelingnurses.com.
+        Below you can download a copy of the lease. Please don't fill it out just yet. If you decide Spokane Traveling Nurses is the right home for you, contact host@spokanetravelingnurses.com.
       </Paragraph>
       </section>
       <Link to={lease} target="_blank" download>
