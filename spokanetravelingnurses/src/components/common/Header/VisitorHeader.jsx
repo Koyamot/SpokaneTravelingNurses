@@ -62,7 +62,7 @@ const VisitorHeader = () => {
             </Link>
           </Dropdown>
           <Link className="navLink" to="/tenantinfo">
-            Lease & Tenant Info
+            Tenant Info
           </Link>
           <Link className="navLink explore" to="/explore">
             Explore Spokane!
