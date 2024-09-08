@@ -1,17 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Paragraph from "antd/lib/typography/Paragraph";
 import Title from "antd/lib/typography/Title";
-import { Button } from "antd";
-import { DownloadOutlined } from "@ant-design/icons";
+// import { Button } from "antd";
+// import { DownloadOutlined } from "@ant-design/icons";
 
-import lease from "../../../assets/lease.pdf"
+// import lease from "../../../assets/lease.pdf"
 import payment from "../../../assets/payment.png"
 
 const TenantInfo = () => {
   return (
     <div className="container">
-      <section>
+      {/* <section>
       <Title level={3}>Lease Agreement</Title>
       <Paragraph>
         Below you can download a copy of the lease. Please don't fill it out just yet. If you decide Spokane Traveling Nurses is the right home for you, contact host@spokanetravelingnurses.com.
@@ -21,7 +21,7 @@ const TenantInfo = () => {
         <Button type="default" icon={<DownloadOutlined />} size="large">
           Download
         </Button>
-      </Link>
+      </Link> */}
       <section className="resource_holder">
       <Title level={3}>Payment Information</Title>
       <Paragraph>
